@@ -1,25 +1,65 @@
-#popover {
-    position: absolute;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    padding: 10px;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-    max-width: 250px;
-    display: none;
-    z-index: 1000;
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-image: url("grid.png");
 }
 
 #regionTable tbody tr:hover {
     cursor: pointer;
 }
 
-/* 
-svg {
-    transform: scale(1);
-    transform-origin: 0% 0%;
-    margin:0px;
-} */
+.map-container {
+    position: relative;
+    width: 100%;
+}
 
+#map {
+    position: relative;
+    animation-duration: 3s;
+    z-index: 1;
+}
+
+#popover {
+    position: absolute;
+    top: 20px;
+    left: 20px; 
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    max-width: 250px;
+    display: none; 
+    z-index: 1050;
+}
+
+.info-panel {
+    position: fixed;
+    top: 20px;
+    left: 20px; 
+    z-index: 1050;
+    overflow: auto;
+    overflow-x: hidden;
+    height: calc(90vh);
+}
+
+.zoom-buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px; 
+    z-index: 1050;
+}
+
+.card-body {
+    font-size: 13px; 
+    white-space:nowrap;
+}
+
+g[id="bg"] {
+    cursor: grab;
+}
+
+g[id="bg"]:active {
+    cursor: grabbing;
+}
 
 g[id="Five Points"],
 g[id="Old Redford"],
