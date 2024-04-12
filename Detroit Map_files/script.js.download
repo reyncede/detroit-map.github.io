@@ -1,0 +1,482 @@
+function handleHoverIn(event) {
+    var gElement = event.currentTarget;
+    regionHighlight(gElement.id);
+}
+
+function regionHighlight(gId) {
+    var gElement = document.getElementById(gId);
+    var polygonElement = gElement.querySelector('polygon');
+
+    if (!polygonElement) return; // Ensure polygon exists
+
+    // Clone the polygon
+    var clonedPolygon = polygonElement.cloneNode(true);
+    clonedPolygon.classList.add('cloned');
+
+    // Distributing colors across the cities
+    switch (gId) {
+
+        // Green Color
+        case 'Marina District':
+        case 'Hubbard-Richard':
+        case "Historic Atkinson":
+        case 'Green Acres':
+        case 'Art Center':
+        case "Briggs":
+        case "New Center Commons":
+        case 'Virginia Park':
+        case 'Rivertown':
+        case 'West Side Industrial':
+        case 'Woodbridge':
+        case 'Boston Edison':
+        case 'West Village':
+        case 'University District':
+        case 'Indian Village':
+        case "Sherwood":
+        case 'Sherwood Forest':
+        case 'Midtown':
+        case 'Downtown':
+        case 'Corktown':
+        case 'Detroit Golf':
+        case 'Brush Park':
+        case 'Palmer Woods':
+        case "Arden Park":
+        case "Joseph Barry Subdivision":
+
+            clonedPolygon.style.fill = '#008000'; // Green
+            break;
+
+        // Blue Color
+        case "West Outer Drive":
+        case 'Berg-Lasher':
+        case "Herman Kiefer":
+        case "Far West":
+        case 'Buffalo Charles':
+        case 'McNichols Evergreen':
+        case 'Schulze':
+        case "Gateway":
+        case 'Seven Mile Lodge':
+        case "McDowell":
+        case 'North End':
+        case 'Jefferson Chalmers':
+        case "Greenwich":
+        case 'Schaefer Lodge':
+        case 'Islandview':
+        case 'Bagley':
+        case 'East English Village':
+        case 'Grandmont':
+        case "Grandmont No.1":
+        case 'LaSalle Gardens':
+        case "North LaSalle":
+        case 'Rosedale Park':
+        case 'North Rosedale Park':
+        case 'Hubbard Farms':
+        case "Henry Ford":
+        case 'Elmwood Park':
+        case "Piety Hill":
+        case 'Lafayette Park':
+
+            clonedPolygon.style.fill = '#0000FF'; // Blue
+            break;
+
+        // Yellow Color
+        case 'Cornerstone Village':
+        case 'College Park':
+        case 'Michigan-Martin':
+        case 'Five Points':
+        case 'Seven Mile-Rouge':
+        case "Pingree Park":
+        case 'Eliza Howell':
+        case 'The Eye':
+        case 'Grand River-St. Marys':
+        case 'Riverbend':
+        case 'Greendfield-Grand River':
+        case 'Grixdale Farms':
+        case "Grant":
+        case "Evergreen-Outer Drive":
+        case 'Crary':
+        case 'Evergreen Lahser':
+        case "O'Hair Park":
+        case 'Minock Park':
+        case "San Bernardo":
+        case 'Castle Rouge':
+        case "Oak Grove":
+        case 'Old Redford':
+        case "Schoolcraft Southfield":
+        case 'Morningside':
+        case "Campau/Banglatown":
+        case 'Winship':
+        case 'Aviation Sub.':
+        case "Russell Woods":
+        case 'Blackstone Park':
+        case 'Martin Park':
+
+            clonedPolygon.style.fill = '#FFFF00'; // Yellow
+            break;
+
+        // Red Color
+        case "Davison-Schoolcraft":
+        case "Gratiot Town/Kettering":
+        case "Hawthorne Park":
+        case "West End":
+        case 'Littlefield':
+        case 'Krainz Woods':
+        case 'Davison':
+        case "Penrose":
+        case 'Airport Sub':
+        case 'Grixdale':
+        case "Northwest":
+        case "Greensbriar":
+        case "Chalfonte":
+        case "Nardin Park":
+        case "Fox Creek":
+        case "East Canfield":
+        case "Gratiot Woods":
+        case "Pilgrim Village":
+        case "Dexter-Fenkell":
+        case 'Poletown East':
+        case 'Midwest':
+        case 'Clayton':
+        case "Grand River":
+        case "Paveway":
+        case 'LaSalle College Park':
+        case 'Ravendale':
+        case "Pulaski":
+        case "Gratiot-Findlay":
+        case 'Grandale':
+        case "North Campau":
+        case 'NW Goldberg':
+        case "Greenfield Park":
+        case 'Weatherby':
+        case 'Van Steuban':
+        case 'Farwell':
+        case "Eden Gardens":
+        case "Wildemere Park":
+        case "Fiskhorn":
+        case 'Boynton':
+        case "Cadillac Heights":
+        case "Northeast Central District":
+        case 'Nolan':
+        case 'Bethune':
+        case "Hubbell-Lyndon":
+        case 'Plymouth-Hubbell':
+        case "Jamison":
+        case 'Chandler Park':
+        case 'Delray':
+        case 'Franklin Park':
+        case "Joy-Schaefer":
+        case 'Regent Park':
+        case 'Warrendale':
+        case 'Barton-McFarland':
+        case 'Dexter-Linwood':
+        case "Bentler-Pickford":
+        case "Cadillac":
+        case "Franklin":
+        case 'McDougall-Hunt':
+        case 'Outer Drive-Hayes':
+        case 'Petosky-Otsego':
+        case 'Conant Gardens':
+        case 'Brightmoor':
+        case "Conner Creek Ind":
+        case 'Moross-Morang':
+        case 'Nortown':
+        case "Gratiot-Grand":
+        case 'Conner Creek':
+        case 'Chaldean Town':
+        case "Butler":
+        case 'Greenfield':
+        case 'Oakman':
+        case "Mapleridge":
+        case 'Denby':
+        case 'Springwells':
+        case "Southfield Plymouth":
+        case 'Riverdale':
+        case 'Herman Gardens':
+        case "Hubbell-Puritan":
+        case 'Westwood Park':
+        case "Yorkshire Woods":
+        case 'Belmont':
+        case 'East Village':
+        case "Pershing":
+        case 'Southwest Detroit':
+        case 'Mohican Regent':
+        case "Mount Olivet":
+        case 'Fitzgerald':
+        case 'Eight Mile Wyoming':
+        case "Chadsey Condon":
+        case "Garden Homes":
+        case "Harmony Village":
+        case "Wade":
+            clonedPolygon.style.fill = '#FF0000'; // Red
+            break;
+
+        default:
+            break;
+    }
+    clonedPolygon.style.opacity = '0.6';
+    gElement.appendChild(clonedPolygon);
+}
+
+function removeRegionHighlight(gId) {
+    const gElement = document.getElementById(gId);
+    const polygonElement = gElement.querySelector('polygon:not(.cloned)'); // Select the original polygon, not the cloned one
+    const clonedPolygon = gElement.querySelector('polygon.cloned'); // Select the cloned polygon
+
+    // Reset fill color of the original polygon if it exists
+    if (polygonElement) {
+        polygonElement.style.fill = '';
+    }
+
+    // Remove the cloned polygon if it exists
+    if (clonedPolygon) {
+        gElement.removeChild(clonedPolygon);
+    }
+}
+
+function handleHoverOut(event) {
+    const gElement = event.currentTarget;
+    removeRegionHighlight(gElement.id);
+}
+
+function showPopover(event) {
+    var gElement = $(event.currentTarget);
+    var id = gElement.attr('id');
+    
+    var row = $('#regionTable tbody tr').filter(function() {
+        return $(this).children().first().text().trim() === id;
+    });
+
+    var popover = $('#popover');
+    var popoverHeader = popover.find('#popover-header');
+    var popoverBody = popover.find('#popover-body');
+    var popoverLink = popover.find('#popover-link');
+    
+    if (!row.length) {
+        if (popoverHeader.length) {
+            popoverHeader.text("No data available for this area");
+        }
+
+        if (popoverBody.length) {
+            popoverBody.empty();
+        }
+
+        if (popoverLink.length) {
+            popoverLink.empty();
+        }
+    } else {
+        var neighborhood = row.find('td:eq(0)').html().trim();
+        var ave = row.find('td:eq(1)').html().trim();
+        var zillowLink = row.find('td:eq(2)').html().trim();
+
+        if (popoverHeader.length) {
+            popoverHeader.text(neighborhood);
+        }
+
+        if (popoverBody.length) {
+            popoverBody.html("Average: " + ave);
+        }
+
+        if (popoverLink.length) {
+            popoverLink.html(zillowLink);
+        }
+    }
+
+    const boundingBox = gElement[0].getBoundingClientRect();
+    popover.css('left', boundingBox.left + 50 + 'px');
+    popover.css('top', boundingBox.bottom + 'px');
+    popover.css('display', 'block');
+
+    $(document).one('click', function (e) {
+        if (!$(e.target).closest('.popover') && !$(e.target).closest('g')) {
+            popover.css('display', 'none');
+        }
+    });
+}
+
+const cityIds = [
+    'Five Points', 'Boston Edison', 'Brush Park', 'Castle Rouge', 'Elmwood Park',
+    'Islandview', 'Midtown', 'Arden Park', 'Dexter-Linwood', 'University District',
+    'Krainz Woods', 'East English Village', 'Bagley',
+    'Belmont', 'The Eye', 'Grandale', 'Chaldean Town', 'Old Redford',
+    'Lafayette Park', 'Indian Village', 'Eliza Howell', 'Corktown',
+    'LaSalle Gardens', 'Petosky-Otsego', 'Detroit Golf', 'Davison', 'Grixdale', 'Nortown',
+    'Regent Park', 'Green Acres', 'Fitzgerald',
+    'Seven Mile Lodge', 'Warrendale', 'Ravendale', 'Minock Park', 'West Village',
+    'Sherwood Forest', 'Hubbard Farms', 'NW Goldberg', 'Woodbridge', 'Downtown', 'North End', 'Martin Park',
+    'Grixdale Farms', 'Conant Gardens', 'Airport Sub', 'Jefferson Chalmers',
+    'Littlefield', 'Boynton', 'Barton-McFarland', 'Greendfield-Grand River',
+    'Hernan Gardens', 'Brightmoor', 'Berg-Lasher', 'Westwood Park', 'Grandmont', 'Palmer Woods',
+    'Rivertown', 'Marina District', 'Poletown East', 'LaSalle College Park', 'Denby',
+    'West Side Industrial', 'Delray', 'Aviation Sub.',
+    'Rosedale Park', 'Franklin Park', 'Greenfield', 'North Rosedale Park', 'McDougall-Hunt', 'Riverdale',
+    'Chandler Park', 'Morningside', 'Eight Mile Wyoming', 'Weatherby', 'Art Center', 'Seven Mile-Rouge',
+    'Clayton', 'Southwest Detroit', 'Springwells', 'Herman Gardens', 'Bethune', 'Midwest',
+    'Farwell', 'Schulze', 'Oakman', 'Crary', 'Moross-Morang', 'Evergreen Lahser', 'Plymouth-Hubbell', 'Outer Drive-Hayes',
+    'Cornerstone Village', 'College Park', 'Buffalo Charles', 'Schaefer Lodge', 'Nolan', 'Winship', "O'Hair Park",
+    'Evergreen-Outer Drive', 'Schoolcraft Southfield', 'Mapleridge', 'Chadsey Condon', 'Grand River', 'West End',
+    'Campau/Banglatown', 'Pulaski', 'Bentler-Pickford', 'East Village', 'Hubbell-Puritan', 'Far West', 'Eden Gardens',
+    'Yorkshire Woods', 'Harmony Village', 'Nardin Park', 'Mount Olivet', 'Hubbell-Lyndon', 'Mohican Regent', 'Pilgrim Village',
+    'Sherwood', 'Gratiot-Findlay', 'Gratiot-Grand', 'Grand River-St.Marys', 'Wade', 'Riverbend', 'Butler', 'Greensbriar',
+    'Grandmont No.1', 'Chalfonte', 'McDowell', 'Pershing', 'Fox Creek', 'Davison-Schoolcraft', 'Henry Ford', 'Gateway',
+    'Fiskhorn', 'Greenwich', 'Cadillac Heights', 'Oak Grove', 'Russell Woods', 'Piety Hill', 'West Outer Drive', 'Blackstone Park',
+    'Conner Creek', 'Hubbard-Richard', 'Michigan-Martin', 'Virginia Park', 'Gratiot Town/Kettering', 'McNichols Evergreen', 'Grant',
+    'Gratiot Woods', 'San Bernardo', 'New Center Commons', 'North LaSalle', 'Briggs', 'Hawthorne Park', 'Wildemere Park', 'Conner Creek Ind',
+    'Joy-Schaefer', 'Jamison', 'Garden Homes', 'Northeast Central District', 'Dexter-Fenkell', 'Northwest',
+    'Herman Kiefer', 'Penrose', 'Paveway', 'Southfield Plymouth', 'Greenfield Park', 'Joseph Barry Subdivision', 'North Campau', 'Cadillac',
+    'Historic Atkinson', 'East Canfield', 'Franklin', 'Van Steuban', 'Pingree Park', 'Grand River-St. Marys'
+];
+
+const gElements = document.querySelectorAll(cityIds.map(id => `g[id="${id}"]`).join(',') || cityIds.map(id => `path[id="${id}"]`).join(','));
+
+gElements.forEach(function (gElement) {
+    gElement.addEventListener('mouseenter', handleHoverIn);
+    gElement.addEventListener('mouseleave', handleHoverOut);
+    gElement.addEventListener('click', function (event) {
+        showPopover(event);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var table = document.getElementById('regionTable');
+    var rows = table.getElementsByTagName('tr');
+
+    for (var i = 0; i < rows.length; i++) {
+        rows[i].addEventListener('mouseenter', function () {
+            var regionName = this.cells[0].innerText;
+            regionHighlight(regionName);
+            var regionName = this.cells[0].innerText;
+            var cityElement = document.getElementById(regionName);
+            if (cityElement) {
+                var clickEvent = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                cityElement.dispatchEvent(clickEvent);
+            }
+        });
+
+        rows[i].addEventListener('mouseleave', function () {
+            var regionName = this.cells[0].innerText;
+            removeRegionHighlight(regionName);
+            closePopover();
+        });
+
+        rows[i].addEventListener('click', function () {
+            var regionName = this.cells[0].innerText;
+            var cityElement = document.getElementById(regionName);
+            if (cityElement) {
+                var clickEvent = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                cityElement.dispatchEvent(clickEvent);
+            }
+        });
+    }
+});
+
+// Function to close the popover
+function closePopover() {
+    const popover = document.querySelector('#popover');
+    if (popover) {
+        popover.style.display = 'none';
+    }
+}
+$('#popover-close-btn').on('click', closePopover);
+
+var table = $('#regionTable').DataTable({
+    scrollX: true,
+    scrollY: true,
+    paging: false,
+});
+$('.dt-length').hide();
+$('.dt-search').hide();
+$('.dt-start').hide();
+
+$('#searchInput').on('keyup', function () {
+    table.search(this.value).draw();
+});
+
+$('#regionTable tbody tr').each(function() {
+    function formatCurrency(value) {
+        var formattedValue = value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        if (formattedValue.endsWith('.00')) {
+            formattedValue = formattedValue.slice(0, -3);
+        }
+        return "$" + formattedValue;
+    }
+
+    var avgSalePriceText = $(this).find('td:nth-child(2)').text();
+    var avgSalePriceValue = parseFloat(avgSalePriceText.replace('$', '').replace(',', ''));
+    var formattedAvgSalePrice = formatCurrency(avgSalePriceValue);
+
+    var badgeClass = '';
+    if (avgSalePriceValue < 70000) {
+        badgeClass = 'badge-danger';
+    } else if (avgSalePriceValue < 100000) {
+        badgeClass = 'badge-warning';
+    } else if (avgSalePriceValue < 200000) {
+        badgeClass = 'badge-info';
+    } else {
+        badgeClass = 'badge-success';
+    }
+
+    var badgeElement = '<span class="badge ' + badgeClass + '">' + formattedAvgSalePrice + '</span>';
+
+    $(this).find('td:nth-child(2)').html(badgeElement);
+});
+
+$(".resizable").resizable({
+    handles: 'e',
+    maxWidth: 400,
+    minWidth: 200,
+    resize: function (event, ui) {
+        ui.size.height = $(this).height();
+    }
+});
+
+var $svg = $('#mapSvg');
+
+var isPanning = false;
+var startCoords = { x: 0, y: 0 };
+var translateCoords = { x: 0, y: 0 };
+
+function startPan(event) {
+    isPanning = true;
+    startCoords.x = event.clientX || event.touches[0].clientX;
+    startCoords.y = event.clientY || event.touches[0].clientY;
+}
+
+function performPan(event) {
+    if (!isPanning) return;
+
+    var currentX = event.clientX || event.touches[0].clientX;
+    var currentY = event.clientY || event.touches[0].clientY;
+
+    var deltaX = currentX - startCoords.x;
+    var deltaY = currentY - startCoords.y;
+
+    translateCoords.x += deltaX;
+    translateCoords.y += deltaY;
+
+    $svg.css('transform', 'translate(' + translateCoords.x + 'px, ' + translateCoords.y + 'px)');
+
+    startCoords.x = currentX;
+    startCoords.y = currentY;
+}
+
+function stopPan() {
+    isPanning = false;
+}
+
+$svg.on('mousedown', startPan);
+$svg.on('mousemove', performPan);
+$svg.on('mouseup', stopPan);
+$svg.on('mouseleave', stopPan);
+
+$svg.on('touchstart', startPan);
+$svg.on('touchmove', performPan);
+$svg.on('touchend', stopPan);
+$svg.on('touchcancel', stopPan);
